@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>QuiK Chat</title>
+  <!-- Google fonts. -->
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Varela Round' rel='stylesheet' />
+  <!-- Use font awesome icons. -->
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <!-- Use firebase app and database. -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
+  <!-- The CSS and JS file must be declared after the things above-->
+  <link rel="stylesheet" href="main.css" />
+  <link rel="stylesheet" href="" />
+  <script type="text/javascript" src="java.js"></script>
+</head>
+<script>
+
+  // Your web app's Firebase configuration
+
+  var firebaseConfig = {
+    apiKey: "AIzaSyDnP8e9-C_Zx_lm18EiKU6ptzmtvXAvQSY",
+    authDomain: "quickchat-7f73b.firebaseapp.com",
+    databaseURL: "https://quickchat-7f73b-default-rtdb.firebaseio.com",
+    projectId: "quickchat-7f73b",
+    storageBucket: "quickchat-7f73b.appspot.com",
+    messagingSenderId: "597121745642",
+    appId: "1:597121745642:web:ad23028b9b5f2590148d93"
+  };
+
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+  let myName = prompt("Enter a username or press ok to join as a guest");
+  if (myName === "") {
+    myName = "Guest";
+  }
+  function sendMusic(){
+      let music= document.getElementById("music").value;
+      firebase.database().ref("music").push().set({
+          "sender": myName,
+          "music": music
+      });
+      let music1= document.getElementById("music")
+      music1.value=""
+      return false;
+  }
+      firebase.database().ref("music").on("child_added", function (snap){
+          var html= "";
+          html+="<p'>";
+          html+= ""+snap.val().sender +" :  " + snap.val().music;
+          html+="</p>";
+          document.getElementById("musics").innerHTML+=html;
+      });
+</script>
+
+<body>
+
+  <div class="container head">
+    <h1 class="titlename"><span>Quick</span>Chat<h1>
+
+        <div id="wrapper" class="wrapper">
+          <div class="site-info">
+            <h2>Music ChatBox<a href="index.html"><button id="exit" class="cancel"> X</button></a></h2>
+          </div>
+          <div>
+            <ul class="chatbox" id="musics">
+            </ul>
+          </div>
+          <form class="login" onsubmit="return sendMusic();">
+            <input id="music" label="music" placeholder="Enter message" autocomplete="off" required>
+            <button class="full" type="submit">SEND</button>
+          </form>
+        </div>
+
+
+</body>
+
+</html>

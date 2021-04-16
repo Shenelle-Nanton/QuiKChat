@@ -1,0 +1,222 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #566D7E;
+  color: black;
+  font-family: Varela Round;
+  padding: 10px;
+}
+
+.container head {
+  max-width: 1170px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 150px;
+  padding: 0px;
+}
+
+.container {
+  max-width: 1170px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+}
+
+.titlename {
+  text-align: center;
+  font-size: 50px;
+  font-style: oblique;
+
+}
+
+.titlename span {
+  color: mediumseagreen;
+}
+
+.wrapper {
+  box-shadow: 0 0 20px 0 rgba(72, 94, 116, 0.7);
+  margin-top: 5vh;
+  background: #cfd8dc;
+}
+
+.wrapper>* {
+  padding: 10px;
+}
+
+.site-info {
+  background: mediumseagreen;
+}
+
+.site-info h2 {
+  text-align: center;
+  font-size: 17px;
+  margin: 0 0 20px 0;
+  color: #ffffff;
+}
+
+.chatbox {
+  font-size: 20px;
+  font-weight: lighter;
+  padding: 5px;
+  margin: 10px;
+  background-color: #fff;
+  background-size: auto;
+  overflow: scroll;
+  height: 350px;
+}
+
+.cancel {
+  background-color: #ec3413;
+  font-weight: bold;
+  text-align: center;
+  margin-left: 240px;
+}
+
+.cancel-games {
+  background-color: #ec3413;
+  font-weight: bold;
+  text-align: center;
+  margin-left: 195px;
+}
+
+.cancel:hover, .cancel-games:hover {
+  background: #bdbdbd;
+  color: #ffffff;
+}
+
+.login {
+  background: #f9feff;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.login label {
+  display: block;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.login input {
+  margin: 10;
+  width: 100%;
+  height: 40px;
+  border-radius: 6px;
+  border-color: rgb(196, 189, 189);
+}
+
+.lobby-btn {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  background: #3399ff;
+  border-radius: 3px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+.full {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  background:mediumseagreen ;
+  border-radius: 3px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+.login button:hover {
+  background: #bdbdbd;
+  color: #ffffff;
+}
+
+
+
+
+
+/* LARGE SCREENS */
+@media only screen and (min-width: 700px) {
+  .wrapper {
+    display: grid;
+    height: 30%;
+    width: 10in;
+    margin-left: 50px;
+  }
+
+  .wrapper>* {
+    padding: 10px;
+  }
+
+  .titlename {
+    text-align: right;
+    margin-top: 10px;
+  }
+
+  .cancel {
+    background-color: #ec3413;
+    font-weight: bold;
+    text-align: center;
+    margin-left: 710px;
+  }
+
+  .cancel-games {
+    background-color: #ec3413;
+    font-weight: bold;
+    text-align: center;
+    margin-left: 640px;
+  }
+
+  .site-info h2 {
+    text-align: left;
+    font-size: 25px;
+  }
+
+  .login input {
+    margin: 10px;
+    width: 80%;
+    height: 40px;
+    border-radius: 6px;
+    border-color: rgb(196, 189, 189);
+  }
+
+  .full {
+    width: 15%;
+    padding: 15px;
+    border: none;
+    background:mediumseagreen ;
+    border-radius: 3px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+  }
+  
+
+  .videogames, .politics, .memes, .music, .anime{
+      width:80%;
+      border:none;
+
+      border-radius: 14px;
+      margin-left: auto;
+      margin-right: auto;
+      padding:15px;
+      background-color:#FF6F00;
+      font-weight: bold;
+      margin-bottom:15px;
+  }
+  .videogmaes:hover,.politics:hover, .memes:hover, .music:hover, .anime:hover{
+    background:#BDBDBD;
+    color:#ffffff;
+   }
+
+    .politicswrapper,  .animewrapper,  .memeswrapper,  .musicwrapper,  .videogameswrapper {
+    box-shadow: 0 0 20px 0 rgba(72,94,116,0.7);
+    display:none;
+  }
+
+  .politicswrapper,  .animewrapper,  .memeswrapper,  .musicwrapper,  .videogameswrapper > *{
+    padding:10px;
+  }
+
+
+}
